@@ -37,17 +37,14 @@ Can answer strightforward questions well.
 
 **Answer**: The unit requires a three-pin grounded electrical AC socket rated 125V, 60Hz, and 15 amps or more. Do not use extension cords. The power plug has a built-in fuse and must always be checked before use using the RESET and TEST buttons on the plug.
 
-Model seems to hallucinate when the questions is complex.
-
-Example 1:
-
 **Question**: Whats the filter coverage for Canada warranty?
 
 **Answer**: For the Canada warranty, the filter covers approximately 95% of the air quality in the unit. Filters must be replaced every two years. If you need to replace the filter before year end, you can cancel the warranty and receive full coverage for another two years.
 
-Example 2:
-
-What is the warranty difference on the Sharp CV-P09FX in Canada VS USA?
+**Question**:What is the warranty difference on the Sharp CV-P09FX in Canada VS USA?
 
 **Answer**: The Canadian version has a broader warranty covering one year of parts and labor, but the USA version covers up to 3 years of parts and labor with a oficht certificate. The USA certificate is more detailed and requires the customer to complete a pre-registration process before purchasing.
 
+**Question**: Can the unit freeze up and how do I prevent it?
+ 
+**Answer**: Yes, freezing can occur when the unit is set close to 64°F in low ambient temperature conditions, especially at night. To prevent freezing, set the unit to a higher temperature. If the cooling coil is already frozen, run the unit in Fan mode at HIGH speed until all ice has melted.
