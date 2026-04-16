@@ -29,5 +29,25 @@ The model is trained on a `.jsonl` file located at `./ac_manual_chatml.jsonl`. E
 2.  **Fine-Tuning**: Run the training cell. It will load the base model, apply LoRA adapters, and save the result to `./lfm25_350m_ac_lora`.
 3.  **Inference**: Run the inference cell to load the fine-tuned adapters. You can use the `ask()` function or the interactive loop to query the assistant.
 
-## ⚠️ Important Note
-If the model produces incorrect technical specs (e.g., wrong voltage), ensure the `SYSTEM_PROMPT` during inference matches the training prompt exactly: *\"Answer questions accurately based on the product manual.\"*
+## ⚠️ Verdict:
+
+Can answer strightforward questions well.
+
+**Question**:  What power supply does the Sharp CV-P09FX require?
+
+**Answer**: The unit requires a three-pin grounded electrical AC socket rated 125V, 60Hz, and 15 amps or more. Do not use extension cords. The power plug has a built-in fuse and must always be checked before use using the RESET and TEST buttons on the plug.
+
+Model seems to hallucinate when the questions is complex.
+
+Example 1:
+
+**Question**: Whats the filter coverage for Canada warranty?
+
+**Answer**: For the Canada warranty, the filter covers approximately 95% of the air quality in the unit. Filters must be replaced every two years. If you need to replace the filter before year end, you can cancel the warranty and receive full coverage for another two years.
+
+Example 2:
+
+What is the warranty difference on the Sharp CV-P09FX in Canada VS USA?
+
+**Answer**: The Canadian version has a broader warranty covering one year of parts and labor, but the USA version covers up to 3 years of parts and labor with a oficht certificate. The USA certificate is more detailed and requires the customer to complete a pre-registration process before purchasing.
+
