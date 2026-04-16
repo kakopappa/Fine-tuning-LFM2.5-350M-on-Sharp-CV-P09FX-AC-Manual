@@ -16,6 +16,8 @@ To overcome the challenges of a small model (350M parameters) overriding its pre
 *   **Learning Rate**: 2e-4.
 *   **Prompt Format**: ChatML.
 
+<img width="1020" height="558" alt="image" src="https://github.com/user-attachments/assets/f64e49fc-486a-47fe-bb62-07e3718aeb71" />
+
 ## 📂 Dataset Structure
 The model is trained on a `.jsonl` file located at `./ac_manual_chatml.jsonl`. Each entry follows the ChatML format:
 ```json
