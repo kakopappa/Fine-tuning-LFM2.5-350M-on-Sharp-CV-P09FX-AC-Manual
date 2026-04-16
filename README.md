@@ -1,4 +1,4 @@
-# Sharp CV-P09FX AC Manual Assistant
+# Sharp CV-P09FX AC Manual AI Assistant
 
 This notebook demonstrates fine-tuning the **LiquidAI/LFM2.5-350M** model using **Unsloth** and **QLoRA** to act as a specialized technical assistant for the Sharp CV-P09FX Portable Air Conditioner.
 
