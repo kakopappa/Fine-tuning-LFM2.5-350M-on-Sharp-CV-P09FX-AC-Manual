@@ -50,3 +50,23 @@ Can answer strightforward questions well.
 **Question**: Can the unit freeze up and how do I prevent it?
  
 **Answer**: Yes, freezing can occur when the unit is set close to 64°F in low ambient temperature conditions, especially at night. To prevent freezing, set the unit to a higher temperature. If the cooling coil is already frozen, run the unit in Fan mode at HIGH speed until all ice has melted.
+
+
+## 🎓 Lessons Learned & Summary
+
+During the fine-tuning of the **Sharp CV-P09FX Assistant**, we discovered several critical factors for successfully specializing a small (350M) model:
+
+### 1. The Capacity Challenge (LoRA Rank)
+*   **Finding**: Standard LoRA ranks (e.g., 8 or 16) were insufficient for the model to accurately recall specific technical details like voltage or fan modes.
+*   **Solution**: Increasing `LORA_RANK` to **64** provided the 'memory capacity' needed to store exact manual specifications without forgetting them.
+
+### 2. Overcoming Pre-trained Bias (Epochs)
+*   **Finding**: At 3 epochs, the model still defaulted to general knowledge (e.g., assuming a 12V power supply common in electronics).
+*   **Solution**: Extending training to **30 epochs** allowed the model to successfully 'overwrite' its general weights with the specific **125V** requirements from the Sharp manual.
+
+### 3. Prompt Alignment
+*   **Finding**: If the `SYSTEM_PROMPT` used during inference differs even slightly from the one used in training, the model may hallucinate or fail to use its fine-tuned knowledge.
+*   **Solution**: Maintain a strict 1:1 match between the training and inference system prompts.
+
+### 4. Efficiency with Unsloth
+*   **Finding**: Fine-tuning even for 30 epochs on a T4 GPU was remarkably fast thanks to Unsloth's optimizations and 4-bit quantization, making this workflow highly accessible for edge-case or domain-specific technical assistants.
