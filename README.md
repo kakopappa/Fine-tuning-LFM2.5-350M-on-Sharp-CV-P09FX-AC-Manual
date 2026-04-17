@@ -18,7 +18,11 @@ To overcome the challenges of a small model (350M parameters) overriding its pre
 
 
 ## 📂 Dataset Structure
-The model is trained on a `.jsonl` file located at `./ac_manual_chatml.jsonl`. Each entry follows the ChatML format:
+I created the trainning dataset and validation dataset using Claude Desktop IDE. You can upload it to IDE and use `Hiku` model (Cheap) to come up with the validation and eval dataset
+
+The model is trained on a `.jsonl` file located at `./ac_manual_chatml_tra.jsonl` (trainning) and `ac_manual_chatml_val.jsonl` (validation). 
+
+Each entry follows the ChatML format:
 ```json
 {
   "text": "<|im_start|>system\n...<|im_end|>\n<|im_start|>user\n...<|im_end|>\n<|im_start|>assistant\n...<|im_end|>"
