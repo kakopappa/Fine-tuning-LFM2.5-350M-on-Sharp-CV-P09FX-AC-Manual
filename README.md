@@ -16,7 +16,6 @@ To overcome the challenges of a small model (350M parameters) overriding its pre
 *   **Learning Rate**: 2e-4.
 *   **Prompt Format**: ChatML.
 
-<img width="1020" height="558" alt="image" src="https://github.com/user-attachments/assets/f64e49fc-486a-47fe-bb62-07e3718aeb71" />
 
 ## 📂 Dataset Structure
 The model is trained on a `.jsonl` file located at `./ac_manual_chatml.jsonl`. Each entry follows the ChatML format:
@@ -31,6 +30,19 @@ The model is trained on a `.jsonl` file located at `./ac_manual_chatml.jsonl`. E
 2.  **Fine-Tuning**: Run the training cell. It will load the base model, apply LoRA adapters, and save the result to `./lfm25_350m_ac_lora`.
 3.  **Inference**: Run the inference cell to load the fine-tuned adapters. You can use the `ask()` function or the interactive loop to query the assistant.
 
+# Trainning
+
+<img width="737" height="412" alt="image" src="https://github.com/user-attachments/assets/4c898a7e-bb18-4ba2-99c4-41af960154c1" />
+
+### Analysis: Validation Plateau & Overfitting
+
+You noticed that the **Validation Loss** stopped decreasing around step 35, even though the **Training Loss** continued to fall. This is a classic sign of the model starting to 'memorize' the specific training examples (overfitting) rather than learning general patterns.
+
+*   **Optimal Point**: In this run, step 35-40 was likely the 'sweet spot' where the model was most accurate on unseen data.
+*   **Why 180 steps then?**: Small models (350M) sometimes benefit from 'over-training' to ensure they strictly follow technical facts (like the 125V requirement), even if the general validation loss plateaus.
+*   **Improvement**: Implement **Early Stopping** to automatically stop training once the validation loss stops improving for a certain number of steps.
+
+*   
 ## ⚠️ Verdict:
 
 Can answer strightforward questions well.
