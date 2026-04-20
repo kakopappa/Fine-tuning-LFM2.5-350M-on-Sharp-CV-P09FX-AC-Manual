@@ -2,6 +2,8 @@
 
 This notebook demonstrates fine-tuning the **LiquidAI/LFM2.5-350M** model using **Unsloth** and **QLoRA** to act as a specialized technical assistant for the Sharp CV-P09FX Portable Air Conditioner.
 
+Link to Colab: https://colab.research.google.com/drive/1H913B_jZFLrkk1Eejpn1RTipzuq3THPF?usp=sharing
+
 ## 🚀 Project Overview
 The goal is to transform a general-purpose lightweight language model into a domain-specific expert that provides accurate technical specifications (power requirements, fan modes, maintenance, etc.) based strictly on the product manual.
 
